@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev Portfolio Analyzer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🔍 Dev Portfolio Analyzer</h1>
+    <p class="subtitle">Look up any GitHub user's public repos — sort, filter, and search them instantly.</p>
+  </header>
+
+  <main>
+    <form id="searchForm">
+      <input type="text" id="usernameInput" placeholder="Enter a GitHub username (e.g. torvalds)" required>
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="status"></div>
+
+    <section id="profile" class="hidden"></section>
+
+    <section id="controls" class="hidden">
+      <input type="text" id="filterInput" placeholder="Filter by repo name...">
+
+      <select id="languageSelect">
+        <option value="">All languages</option>
+      </select>
+
+      <select id="sortSelect">
+        <option value="stars">Sort: Most stars</option>
+        <option value="updated">Sort: Recently updated</option>
+        <option value="name">Sort: Name (A-Z)</option>
+        <option value="forks">Sort: Most forks</option>
+      </select>
+
+      <label class="checkbox">
+        <input type="checkbox" id="hideForks"> Hide forks
+      </label>
+    </section>
+
+    <section id="results"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
