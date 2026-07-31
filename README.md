@@ -4,15 +4,11 @@
 
 Look up any GitHub user and explore their public repos — sort by stars/forks/recency, filter by language, search by name, hide forks. Useful for developers auditing their own portfolio, or recruiters scanning a candidate's public work at a glance.
 
-
-
 \## Live Demo
 
 \- Deployed app (via load balancer, run locally): http://localhost:8080
 
-\- Demo video: \*link here\*
-
-
+\- Demo video: https://youtu.be/6eAKRHBeuxQ
 
 \## Features
 
@@ -44,7 +40,7 @@ cd server
 
 npm install
 
-cp .env.example .env   # optionally add a GITHUB\_TOKEN to raise the rate limit
+cp .env.example .env   # optionally add a GITHUB\\\_TOKEN to raise the rate limit
 
 npm start
 
@@ -98,7 +94,7 @@ docker compose ps          # confirm all 3 containers are Up
 
 docker compose logs -f     # watch requests, refresh http://localhost:8080 a few times
 
-&#x20;                           # to see requests alternate between web01 and web02
+\&#x20;                           # to see requests alternate between web01 and web02
 
 ```
 
@@ -126,7 +122,7 @@ Visit \*\*http://localhost:8080\*\* — this is the load balancer's address. Eve
 
 \## Notes
 
-\- Unauthenticated GitHub API requests are capped at 60 requests/hour per IP address. Add a personal access token (https://github.com/settings/tokens, no special scopes needed) to `.env` as `GITHUB\_TOKEN` to raise this limit to 5,000/hour.
+\- Unauthenticated GitHub API requests are capped at 60 requests/hour per IP address. Add a personal access token (https://github.com/settings/tokens, no special scopes needed) to `.env` as `GITHUB\\\_TOKEN` to raise this limit to 5,000/hour.
 
 \- API errors (rate limits, unknown usernames, network failures) are all caught and shown as clear, user-friendly messages instead of crashing.
 
