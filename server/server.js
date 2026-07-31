@@ -5,7 +5,8 @@ const fetch = require('node-fetch');
 const path = require('path');
 
 const app = express();
-app.use(cors());
+app.use(cors());app.use((req, res, next) => { console.log(`Handling request: ${req.method} ${req.url}`); next(); });
+
 app.use(express.static(path.join(__dirname, '../public')));
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // optional, raises rate limit if set
