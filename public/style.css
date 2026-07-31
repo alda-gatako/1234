@@ -1,0 +1,132 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  margin: 0;
+  padding: 0 20px 60px;
+}
+
+header {
+  text-align: center;
+  padding: 40px 0 20px;
+}
+
+h1 { margin: 0 0 8px; font-size: 2rem; }
+.subtitle { color: #94a3b8; margin: 0; }
+
+main { max-width: 900px; margin: 0 auto; }
+
+#searchForm {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+#usernameInput, #filterInput {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #6366f1;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+}
+button:hover { background: #4f46e5; }
+
+#status { min-height: 24px; margin: 10px 0; color: #f87171; }
+#status.loading { color: #94a3b8; }
+
+.hidden { display: none; }
+
+#profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+#profile img { width: 64px; height: 64px; border-radius: 50%; }
+#profile .meta small { color: #94a3b8; display: block; margin-top: 4px; }
+#profile a { color: #818cf8; text-decoration: none; }
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+  align-items: center;
+}
+#controls select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #e2e8f0;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 16px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.card:hover { transform: translateY(-2px); border-color: #6366f1; }
+
+.card h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.card h3 a { color: #e2e8f0; text-decoration: none; }
+.card h3 a:hover { color: #818cf8; }
+
+.card p { color: #94a3b8; font-size: 0.9rem; margin: 0 0 10px; min-height: 20px; }
+
+.card .stats {
+  display: flex;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #312e81;
+  color: #c7d2fe;
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+}
+
+.empty, .error {
+  text-align: center;
+  color: #94a3b8;
+  padding: 40px 0;
+  grid-column: 1 / -1;
+}
